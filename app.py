@@ -8,12 +8,22 @@ news_id = ['0','1','2','3']
 data = [
     {
         "id": '0',
-        "title": 'News',
+        "title": 'ewewqe',
         "content": "contetnt"
     },
     {
         "id": '1',
-        "title": 'News 2',
+        "title": 'ewe',
+        "content": "contetnt 2"
+    }
+    ,{
+        "id": '2',
+        "title": 'ewewqe',
+        "content": "contetnt"
+    },
+    {
+        "id": '3',
+        "title": 'ewe',
         "content": "contetnt 2"
     }
 ]
