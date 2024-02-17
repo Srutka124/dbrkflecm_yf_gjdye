@@ -1,36 +1,18 @@
-from flask import Flask, render_template, redirect, url_for
+
+from flask import Flask, render_template, redirect, url_for, request, session
+app = Flask(__name__, template_folder='', static_folder='')
+from db import get_all_news
+
+
 
 app = Flask(__name__, template_folder='', static_folder='')
 
-news = ['kdsfins', 'qwmdsffodsf', 'qwe121233', 'qwe123']
-news_id = ['0','1','2','3']
 
-data = [
-    {
-        "id": '0',
-        "title": 'ewewqe',
-        "content": "contetnt"
-    },
-    {
-        "id": '1',
-        "title": 'ewe',
-        "content": "contetnt 2"
-    }
-    ,{
-        "id": '2',
-        "title": 'ewewqe',
-        "content": "contetnt"
-    },
-    {
-        "id": '3',
-        "title": 'ewe',
-        "content": "contetnt 2"
-    }
-]
 
 @app.route("/")
 def index():
-    return render_template('home.html', news=data)
+    print(get_all_news())
+    return render_template('home.html', news=get_all_news())
 
 
 @app.route("/home/<id>")
@@ -42,6 +24,12 @@ def home(id):
 
     
     return redirect('/')
+def profile():
+    if 'user' in session.keys() and session['user']:
+        add_pcoduct(request.form.get('title'), request.form.get('description'), request.form.get('image'), 1,1)
+        return render_template('profile.html')
+    else:
+        return redirect(url_for('signIn'))
 
 
 app.run(debug=True)
