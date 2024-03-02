@@ -32,12 +32,12 @@
 
             </nav>
             <div class="articles">
-                {% for new in news %}
-                <a class="article" href="/home/{{new['id']}}">
+                {% for product in products %}
+                <a class="article" href="/home/{{product['id']}}">
                     <img src="https://t4.ftcdn.net/jpg/01/67/74/79/360_F_167747932_NE1da5cf9FM30QExtlFjbmk9ypItoJl2.jpg" alt="">
                     <div class="content">
-                        <h2>{{new['title']}}</h2>
-                        <p>{{new['content']}}</p>
+                        <h2>{{product['name']}}</h2>
+                        <p>{{product['infa']}}</p>
             </div>
                 
                 </a>
