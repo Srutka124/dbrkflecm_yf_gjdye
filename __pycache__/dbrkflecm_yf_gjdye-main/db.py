@@ -55,7 +55,7 @@ def insert_test_data():
     cursor.execute('''INSERT INTO users (status , points) VALUES (?,?)''',['ASasASASSa','5'] )
     conn.commit()
     cursor.execute('''INSERT INTO product (status ,give_points, infa, photo , price, name) 
-                   VALUES (?, ?,?, ?,?,?)''', ['12','5','fsfxfjdsflkjdsjflkjfljfjfdsjfdsjfsfkdsfdjfdsf fdsfdsf  s fdfds dfdsfddffdsf fdsfdsfsf fdsfdsf dsfdsfdds sfdsfdssfdsf dsfds ffdfdsfds fdsfdsfs sfds fd fsd sdsad dsdsadsa dsasad fs dsv ds hdds ffd gds fd', 'https://t4.ftcdn.net/jpg/01/67/74/79/360_F_167747932_NE1da5cf9FM30QExtlFjbmk9ypItoJl2.jpg',
+                   VALUES (?, ?,?, ?,?,?)''', ['vip','5','adsdksadsakdksakdkd;ldksadd', 'https://t4.ftcdn.net/jpg/01/67/74/79/360_F_167747932_NE1da5cf9FM30QExtlFjbmk9ypItoJl2.jpg',
                                         '15000','GELEcSU'])
     conn.commit()
 
@@ -74,12 +74,12 @@ def get_all_products():
     cursor.execute('''SELECT * FROM product''')
     return cursor.fetchall()
 
-def get_product_by_id(id):
+def get_category_by_id(id):
     open()
-    cursor.execute('''SELECT * FROM product WHERE product.id == (?)''', [id])
+    cursor.execute('''SELECT * FROM categories WHERE categories.id == (?)''', [id])
     return cursor.fetchall()
 def add_products(a, b ,c , d, e, f, g):
-    cursor.execute('''INSERT INTO product (status , giwe_points , infa , photo , price ,name)VALURES (?,?,?))''',[ 'a','b','c' , 'd','e' , 'f' , 'g'] )
+    cursor.execute('''INSERT INTO produts (status , giwe_points , infa , photo , price ,name)VALURES (?,?,?))''',[ 'a','b','c' , 'd','e' , 'f' , 'g'] )
     conn.commit()
     close()
 
@@ -87,5 +87,4 @@ drop_tabel()
 create_tables()
 insert_test_data()
 show_tables()
-
 # add_products("1212qw", "12wqwqw" , "12")

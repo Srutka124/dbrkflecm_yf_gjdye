@@ -23,7 +23,7 @@
 
                 <button>магазин</button>
 
-                <button>департамент автоматизації</button>
+                <a href="/home/depe_admin"><button>департамент автоматизації</button></a>
 
                 <button>департамент автоматизації</button>
 
@@ -33,11 +33,13 @@
             </nav>
             <div class="articles">
                 {% for product in products %}
-                <a class="article" href="/home/{{product['id']}}">
-                    <img src="https://t4.ftcdn.net/jpg/01/67/74/79/360_F_167747932_NE1da5cf9FM30QExtlFjbmk9ypItoJl2.jpg" alt="">
+                <a class="article" href="/home/{{product[0]}}">
+                    <img src="{{ products [4] }}" alt="картинка" >
                     <div class="content">
-                        <h2>{{product['name']}}</h2>
-                        <p>{{product['infa']}}</p>
+                        <h2>{{product[1]}}</h2>
+
+
+                        <p>{{product[2]}}</p>
             </div>
                 
                 </a>
@@ -45,7 +47,6 @@
             </div>
         </section>
         <section>
-            <h1>ЗЗЗ</h1>
         </section>
     </main>
 </body>
