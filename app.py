@@ -1,7 +1,10 @@
 
 from flask import Flask, render_template, redirect, url_for, request, session
 app = Flask(__name__, template_folder='', static_folder='')
-from db import get_all_products,get_product_by_id
+from db import get_all_products,get_product_by_id,open,close,do,add_products
+import sqlite3
+conn = None
+cursor= None
 
 
 
@@ -27,7 +30,41 @@ def home(id):
 def depe_admin():
     return render_template('depe_admin.html',)
 
+@app.route("/profile")
+def profile():
+    return render_template('plus.html')
+
+@app.route("/plus", methods=['POST'])
+def plus():
+    if request.method == 'POST':
+        a = request.form.get('name')
+        c = request.form.get('infa')
+        b = request.form.get('img')
+        d = request.form.get('price')
+        i = request.form.get('status')
+        f = request.form.get('point')
+
+       add_products(i,f,)
+    return redirect(url_for('profile'))
 
 
+@app.route("/home/login" , methods=["GET","POST"])
+def login():
+    
+    if request.method == "POST":
+        if request.form['username'] == 'admin' and request.form['password'] == 'admin':
+            session['user'] = True
+            session['inccorect_pass'] = False
+            return redirect('/profile')
+        else:
+            session['inccorect_pass'] = True
+            return redirect(url_for('login'))
+            
+    if ('inccorect_pass' in session.keys()  ):
+        return render_template('login.html', incorrect_password=session['inccorect_pass'])
+    
+    return render_template('login.html', incorrect_password=False)
 
+
+app.secret_key = 'wewewe32-0fdfrkrrf'
 app.run(debug=True)

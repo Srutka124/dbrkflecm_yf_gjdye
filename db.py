@@ -42,10 +42,14 @@ def create_tables():
         )
         '''
     )
-    
+    #do ('''CREATE TABLE IF NOT EXISTS admin (
+    #    id INTEGER PRIMARY KEY,
+    #    login VARCHAR,
+    #    password VARCHAR,''')
 
 def drop_tabel():
     open()
+    #do ('''DROP TABLE IF EXISTS admin''')
     do ('DROP TABLE IF EXISTS product')
     do ('DROP TABLE IF EXISTS user')
     close()
@@ -58,7 +62,8 @@ def insert_test_data():
                    VALUES (?, ?,?, ?,?,?)''', ['12','5','fsfxfjdsflkjdsjflkjfljfjfdsjfdsjfsfkdsfdjfdsf fdsfdsf  s fdfds dfdsfddffdsf fdsfdsfsf fdsfdsf dsfdsfdds sfdsfdssfdsf dsfds ffdfdsfds fdsfdsfs sfds fd fsd sdsad dsdsadsa dsasad fs dsv ds hdds ffd gds fd', 'https://t4.ftcdn.net/jpg/01/67/74/79/360_F_167747932_NE1da5cf9FM30QExtlFjbmk9ypItoJl2.jpg',
                                         '15000','GELEcSU'])
     conn.commit()
-
+    #cursor.execute('''INSERT INTO admin (login , passvort) VALUES (?,?)''',['admin','admin'] )
+    #conn.commit()
 
 def show_tables():
     open()

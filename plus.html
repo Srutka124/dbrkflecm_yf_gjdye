@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <form method="post" action="plus">
+    <div class="block" style="position: absolute;">
+        <h1>Напиши назву</h1>
+        <input type="text" name="name">
+        <h1>Нвпиши коротку інформацію<h1>
+        <input type="text" name="infa">
+        <h1>Напиши айді фотографії</h1>
+        <input type="text" name="img">
+        <h1>Напиши ціну</h1>
+        <input type="text" name="price">
+        <h1>Напиши status</h1>
+        <input type="text" name="status">
+        <h1>Напиши point</h1>
+        <input type="text" name="point">
+        <button type="submit">додати</button>
+
+    </div>
+    </form>
+</body>
+
+</html>
