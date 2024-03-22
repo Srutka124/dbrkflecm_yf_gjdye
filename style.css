@@ -98,3 +98,11 @@ section {
     padding: 0%;
     text-decoration: none;
 }
+.project-item {
+    display: flex;  /* Встановлюємо flex-контейнер */
+    align-items: center; /* Вирівнюємо елементи вертикально */
+}
+
+.project-image {
+    margin-right: 20px; /* Додаємо відступ між зображенням та текстом */
+}

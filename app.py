@@ -20,8 +20,7 @@ def index():
 
 @app.route("/home/pass")
 def pasport():
-
-    return render_template('pass.html', progect=get_all_progect())
+    return render_template('pass.html', projects=get_all_progect())
 
 
 
