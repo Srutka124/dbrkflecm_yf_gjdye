@@ -21,25 +21,25 @@
             <nav class = "rightwall">                                  
                 <button>Головна</button>
 
-                <button>магазин</button>
+                <button><a herf = "home.html">магазин</a></button>
 
                 <a href="/home/depe_admin"><button>департамент автоматизації</button></a>
 
-                <button>департамент автоматизації</button>
+                <button><a href="/home/pass" class = "abtt">робочий паспорт</a></button>
 
-                <button>департамент проектування та веробництва</button>
+                
 
 
             </nav>
             <div class="articles">
                 {% for product in products %}
                 <a class="article" href="/home/{{product[0]}}">
-                    <img src="{{ products [4] }}" alt="картинка" >
+                    <img src="{{product[4]}}" alt="картинка" >
                     <div class="content">
-                        <h2>{{product[1]}}</h2>
+                        <h2>{{product[6]}}</h2>
 
 
-                        <p>{{product[2]}}</p>
+                        <p>{{product[5]}}</p>
             </div>
                 
                 </a>

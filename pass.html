@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+    <header>
+        <img src="https://robitnia.com/wp-content/uploads/2016/01/logo-1.jpg" class = "head"></img>
+        <input type="text" placeholder="Search.." class = "inputt">
+
+    </header>
+    <main>
+        <section>
+            
+            
+            <nav class = "rightwall">                                  
+                <button>Головна</button>
+
+                <button>магазин</button>
+
+                <a href="/home/depe_admin"><button>департамент автоматизації</button></a>
+
+                <button><a href="/home/pass" class = "abtt">робочий паспорт</a></button>
+
+                
+
+
+            </nav>
+            <div class="articles">
+                
+                {% if progect %}
+                    {% for project_item in progect %}
+                    <img src="{{progect[1]}}" alt="картинка" algin = "right" >
+                    <p vspace ="300" >{{progect[2]}}</p>
+                    {% endfor %}
+                {% else %}
+                    <p>Немає жодних проектів.</p>
+                {% endif %}
+                
+                
+                
+            </div>
+        </section>
+        <section>
+        </section>
+    </main>
+</body>
+</html>

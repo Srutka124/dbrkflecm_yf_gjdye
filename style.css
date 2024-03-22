@@ -45,7 +45,8 @@ button:hover{
 }
 
 .articles {
-    width: 700px;
+    width: 900px;
+    height: 300px;
     display: flex;
     flex-flow: row wrap;
     gap: 20px;
@@ -91,4 +92,9 @@ section {
     gap: 20px;
     flex-direction: column;
     
+}
+.abtt{
+    border: 0;
+    padding: 0%;
+    text-decoration: none;
 }

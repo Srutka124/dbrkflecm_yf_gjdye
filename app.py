@@ -1,7 +1,7 @@
 
 from flask import Flask, render_template, redirect, url_for, request, session
 app = Flask(__name__, template_folder='', static_folder='')
-from db import get_all_products,get_product_by_id,open,close,do,add_products
+from db import get_all_products,get_product_by_id,add_products,drop_tabel,get_all_progect
 import sqlite3
 conn = None
 cursor= None
@@ -16,6 +16,17 @@ app = Flask(__name__, template_folder='', static_folder='')
 def index():
 
     return render_template('home.html', products=get_all_products())
+
+
+@app.route("/home/pass")
+def pasport():
+
+    return render_template('pass.html', progect=get_all_progect())
+
+
+
+
+
 
 
 @app.route("/home/<id>")
@@ -44,7 +55,10 @@ def plus():
         i = request.form.get('status')
         f = request.form.get('point')
 
-       add_products(i,f,)
+        add_products(i,f,c,b,d,a)
+    if request.form.get('delit') == 'POST':
+        drop_tabel()
+    
     return redirect(url_for('profile'))
 
 
