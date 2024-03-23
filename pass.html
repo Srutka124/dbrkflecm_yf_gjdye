@@ -28,6 +28,7 @@
 
             </nav>
             <div class="articles">
+                <hr> 
                 {% if projects %}
                     {% for project in projects %}
                         <img src="{{ project[1] }}" alt="картинка">
@@ -36,6 +37,7 @@
                 {% else %}
                     <p>Немає жодних проектів.</p>
                 {% endif %}
+                <hr> 
             </div>
         </section>
         <section>

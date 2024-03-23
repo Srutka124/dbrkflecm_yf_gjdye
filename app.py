@@ -23,7 +23,10 @@ def pasport():
     return render_template('pass.html', projects=get_all_progect())
 
 
+@app.route("/home/bos")
+def bos():
 
+    return render_template('bos.html', products=get_all_products())
 
 
 

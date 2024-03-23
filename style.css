@@ -106,3 +106,8 @@ section {
 .project-image {
     margin-right: 20px; /* Додаємо відступ між зображенням та текстом */
 }
+head {
+    background: url("") no-repeat;
+    background-size: contain;
+    background-position: center;
+}
